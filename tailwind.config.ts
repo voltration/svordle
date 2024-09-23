@@ -4,7 +4,12 @@ export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        svelte: "#F96743",
+        bg: "#141411"
+      }
+    }
   },
 
   plugins: []

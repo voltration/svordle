@@ -1,3 +1,21 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@font-face {
+    font-family: "Clash Display Variable";
+    src: url("/fonts/ClashDisplay-Variable.woff2");
+}
+
+@font-face {
+    font-family: "Satoshi Variable";
+    src: url("/fonts/Satoshi-Variable.woff2");
+}
+
+.satoshi {
+    font-family: 'Satoshi Variable', sans-serif;
+}
+
+.clash {
+    font-family: 'Clash Display Variable', sans-serif;
+}
