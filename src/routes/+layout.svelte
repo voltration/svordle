@@ -3,7 +3,9 @@
     let { children } = $props();
 </script>
 
-{@render children()}
+<div class="antialiased">
+    {@render children()}
+</div>
 
 <style>
     :root {
