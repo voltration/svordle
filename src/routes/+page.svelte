@@ -1,6 +1,6 @@
 <script lang="ts">
     import Letter from "$lib/Letter.svelte";
-    import { game } from "$lib/store.svelte";
+    import { game, gameState } from "$lib/store.svelte";
 
 	let canSubmit = $derived(game.svordle[game.index].input.filter(l => l !== "").length === 5);
 
@@ -35,13 +35,29 @@
 		const w = game.word.split("");
 		const i = game.svordle[game.index].input; 
 		const v = game.svordle[game.index].verdict;
-		
+
 		for (let j = 0; j < i.length; j++) {
-			for ()
+			if (i[j] === w[j]) {
+				v[j] = gameState.green;
+			}
+			else if (w.includes(i[j])) {
+				v[j] = gameState.yellow;
+			}
+
+			else if (i[j] !== w[j] && v[j] === gameState.normal) {
+				v[j] = gameState.red;	
+			}
 		}
-		
+
+		let c = 0;
+		for (let j = 0; j < v.length; j++) {
+			if (v[j] === gameState.green) {
+				c++;
+			}
+		}
 		game.index++;
 	}
+	$inspect(game)
 </script>
 
 <svelte:window on:keydown|preventDefault={keyHandler} />
