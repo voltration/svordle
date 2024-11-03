@@ -1,10 +1,10 @@
 <script lang="ts">
-    import EndScreen from "$lib/EndScreen.svelte";
+    	import EndScreen from "$lib/EndScreen.svelte";
 	import Letter from "$lib/Letter.svelte";
-    import { game, gameState } from "$lib/store.svelte";
+	import { game, gameState } from "$lib/store.svelte";
 
 	const canSubmit = $derived(() => {
-  		return game?.svordle?.[game.current?.index]?.input.filter(l => l !== "").length  === 5
+  		return game?.svordle?.[game.current?.index]?.input.filter(l => l !== "").length  === 5;
 	});
 
     const keyHandler = (e: { key: string }) => {
