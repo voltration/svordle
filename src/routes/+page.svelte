@@ -64,13 +64,6 @@
 			}
 		}
 
-		let c = 0;
-		for (let j = 0; j < v.length; j++) {
-			if (v[j] === gameState.green) {
-				c++;
-			}
-		}
-
 		let count = 0;
 		for (let j = 0; j < v.length; j++) {
 			if (v[j] === gameState.green) {
